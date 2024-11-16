@@ -4,10 +4,137 @@
     <title>URL Shortener</title>
 </head>
 <body>
-    <h1>URL Shortener</h1>
-    <form action="/shorten" method="POST">
-        <input type="text" name="url" placeholder="Enter URL">
-        <button type="submit">Shorten</button>
-    </form>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+  input[type="text"], button {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+header, footer {
+            text-align: center;
+           
+            background-color: #f0f0f0;
+        }
+
+        header a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .logo {
+            width: 20px;
+            height: auto;
+        }
+        .container {
+            max-width: 400px;
+            margin:   
+ 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #relink {
+  color: black !important;
+  text-decoration: none;
+  
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+#relink:hover {
+  color: black!important; /* A slightly darker blue on hover */
+  font-style: italic;
+
+}
+        
+    </style>
+      <header>
+        <div class="container" style="line-height:auto;">
+            <img src="https://avatars.githubusercontent.com/u/52121091?s=400&u=ba23a83e40e5dd66220ac951a7d4de44ad496e77&v=4" alt="Your Logo" class="logo">
+            <a href="https://github.com/skvprogrammer" target="_blank" id="relink">GitHub</a>
+            <a href="https://leetcode.com/u/skvprogrammer" target="_blank" id="relink">LeetCode</a>
+           <!-- <a href="https://your-portfolio-website.com" target="_blank">More Projects</a>
+        !--></div>
+    </header>
+    <div class="container" style="text-align: center;">
+        <h1>URL Shortener</h1>
+        <form action="/shorten" method="POST" style="margin-right:20px;">
+            <input type="text" name="url" placeholder="Enter URL" required>
+            <button type="submit" style="margin-top:10px;">Shorten</button>
+        </form>   
+
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span>  Developed by <a href="https://github.com/skvprogrammer" id="relink">SKV</a> | Built with Flask and ❤️</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+      </script>
 </body>
 </html>

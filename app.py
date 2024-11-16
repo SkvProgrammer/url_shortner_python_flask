@@ -10,6 +10,11 @@ url_mapping = {}
 def index():
     return render_template('index.html')
 
+@app.route('/index')
+def indexA():
+    return render_template('index.html')
+
+
 
 @app.route('/shorten', methods=['POST'])
 def shorten():
@@ -30,4 +35,4 @@ def redirect_to_url(short_url):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
