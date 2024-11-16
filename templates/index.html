@@ -1,140 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Shortener</title>
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/52121091?s=400&u=ba23a83e40e5dd66220ac951a7d4de44ad496e77&v=4">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-light">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
     <style>
-        body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  text-align: center;
-}
-
-.container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  margin-bottom: 20px;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .container {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 20px;
-  }
-  input[type="text"], button {
-    padding: 8px;
-    font-size: 14px;
-  }
-}
-
-header, footer {
-            text-align: center;
-           
-            background-color: #f0f0f0;
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
         }
 
         header a {
-            color: #007bff;
+            color: #0d6efd;
+            margin-left: 15px;
             text-decoration: none;
-            margin: 0 10px;
+            font-weight: bold;
         }
 
-        footer p {
-            margin: 0;
+        header a:hover {
+            text-decoration: underline;
         }
 
-        .logo {
-            width: 20px;
-            height: auto;
-        }
-        .container {
-            max-width: 400px;
-            margin:   
- 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        footer {
+            background-color: #f8f9fa;
+            padding: 15px 0;
         }
 
-        h1 {
-            margin-bottom: 20px;
+        .form-container {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        button {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding:0px;
         }
-        #relink {
-  color: black !important;
-  text-decoration: none;
-  
-  font-family: 'Montserrat', sans-serif;
 
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+    color: #0d6efd; /* Bootstrap primary color */
+    font-weight: bold; /* Make links stand out */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Add some padding for a button-like feel */
+    border-radius: 5px; /* Rounded edges */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
 }
 
-#relink:hover {
-  color: black!important; /* A slightly darker blue on hover */
-  font-style: italic;
-
+a:hover {
+    background-color: #0d6efd; /* Highlight background on hover */
+    color: white; /* Contrast text color on hover */
+    text-decoration: none; /* Keep underline removed */
 }
-        
+
     </style>
-      <header>
-        <div class="container" style="line-height:auto;">
-            <img src="https://avatars.githubusercontent.com/u/52121091?s=400&u=ba23a83e40e5dd66220ac951a7d4de44ad496e77&v=4" alt="Your Logo" class="logo">
-            <a href="https://github.com/skvprogrammer" target="_blank" id="relink">GitHub</a>
-            <a href="https://leetcode.com/u/skvprogrammer" target="_blank" id="relink">LeetCode</a>
-           <!-- <a href="https://your-portfolio-website.com" target="_blank">More Projects</a>
-        !--></div>
-    </header>
-    <div class="container" style="text-align: center;">
-        <h1>URL Shortener</h1>
-        <form action="/shorten" method="POST" style="margin-right:20px;">
-            <input type="text" name="url" placeholder="Enter URL" required>
-            <button type="submit" style="margin-top:10px;">Shorten</button>
-        </form>   
 
+    <!-- Header -->
+    <header class="py-3 bg-white shadow-sm">
+        <div class="container d-flex align-items-center justify-content-between">
+            <img src="https://avatars.githubusercontent.com/u/52121091?s=400&u=ba23a83e40e5dd66220ac951a7d4de44ad496e77&v=4" alt="Your Logo" class="logo">
+            <div>
+                <a href="https://github.com/skvprogrammer" target="_blank">GitHub</a>
+                <a href="https://leetcode.com/u/skvprogrammer" target="_blank">LeetCode</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="form-container mx-auto text-center">
+            <h1 class="mb-4">URL Shortener</h1>
+            <form action="/shorten" method="POST" class="row g-3">
+                <div class="col-12">
+                    <input type="url" name="url" class="form-control" placeholder="Enter URL" required style="box-shadow:none!important;">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary w-50">Shorten</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="currentYear"></span>  Developed by <a href="https://github.com/skvprogrammer" id="relink">SKV</a> | Built with Flask and ❤️</p>
+
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; <span id="currentYear"></span> Developed by <a href="https://github.com/skvprogrammer" target="_blank">SKV</a> | Built with Flask and ❤️</p>
         </div>
     </footer>
+
+    <!-- Script -->
     <script>
         document.getElementById("currentYear").textContent = new Date().getFullYear();
-      </script>
+    </script>
 </body>
 </html>
